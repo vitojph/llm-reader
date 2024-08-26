@@ -1,0 +1,18 @@
+[project]
+name = "llm-reader"
+version = "0.1.0"
+description = "LLM-based reader that finds and summarizes interesting readings"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "ruff>=0.6.2",
+    "requests>=2.32.3",
+    "sendgrid>=6.11.0",
+    "openai>=1.42.0",
+    "beautifulsoup4>=4.12.3",
+    "python-dotenv>=1.0.1",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

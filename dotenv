@@ -1,0 +1,5 @@
+OPENAI_API_KEY=
+SENDGRID_API_KEY=
+FROM_EMAIL=
+TO_EMAIL=
+CATEGORIES="Artificial Intelligence (AI), embeddings, large language models (LLMs), Natural Language Processing (NLP), Python, Retrieval Augmented Generation (RAG), GenAI, semantic search"
