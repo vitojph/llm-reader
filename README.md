@@ -2,9 +2,22 @@
 
 (WIP) This contains an LLM-based reader that finds and summarizes interesting readings.
 
-## Run
+## Commands
+
+### Create the database
 
 ```shell
-$ uv run src/main.py
+make db
 ```
 
+###  Find intereting readings
+
+```shell
+make analyze
+```
+
+###  Clean database and and find intereting readings
+
+```shell
+make all
+```
