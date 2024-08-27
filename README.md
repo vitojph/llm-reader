@@ -2,11 +2,9 @@
 
 This contains an LLM-based reader that finds and summarizes interesting readings.
 
-## Install
+## Settings
 
-```shell
-uv install
-```
+Create a local `.env` file with the required variables.
 
 ## Commands
 
