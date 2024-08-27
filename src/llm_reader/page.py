@@ -28,9 +28,9 @@ class Page:
             res = requests.get(self.url)
             if res.status_code == 200:
                 self.soup = BeautifulSoup(res.text, "html.parser")
-                self.title = self.soup.find("title").text
+                self.title = self.soup.find("title").text.strip()
                 self.text = self.soup.get_text()
-                summary = summarize(f"# {self.title} {self.text}")
+                summary = summarize(f"# {self.title}\n{self.text}")
                 self.summary = summary.text
                 self.categories = summary.categories
                 self.status = "synced"
