@@ -16,9 +16,9 @@ def compose_message(pages=List) -> None:
     body = f"""<h1>News Summary from {formatted_date}</h1>"""
     for p in pages:
         body += f"""
-        <h2><a href="{p.url}" target="_blank">{p.title}</a></h2>
-        <p>{p.summary}</p>
-        <p>categories: <tt>{p.categories}</tt></p>
+        <h2><a href="{p[1]}" target="_blank">{p[0]}</a></h2>
+        <p>{p[2]}</p>
+        <p>categories: <tt>{p[3]}</tt></p>
         """
     res = send_email(body)
     if res == 202:
