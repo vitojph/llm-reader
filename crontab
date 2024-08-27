@@ -1,0 +1,7 @@
+# Run analyze-news.py at 10am, 1pm, and 6pm
+0 15 * * * uv run src/analyze-news.py
+0 18 * * * uv run src/analyze-news.py
+0 23 * * * uv run src/analyze-news.py
+
+# Run send-emails.py at 6:30pm
+30 23 * * * uv run src/send-emails.py
