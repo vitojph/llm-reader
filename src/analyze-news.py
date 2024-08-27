@@ -11,6 +11,6 @@ print("🧠 Analyzing and summarizing the contents...")
 p._get_links()
 
 print("🗄️ Updating the database...")
-for n, page in enumerate(p.children):
+for page in p.children:
     add_page(page)
 print("Done!")
