@@ -46,7 +46,9 @@ def isATargetPage(title: str) -> bool:
 def isAValidPage(url: str) -> bool:
     if len(url) < 5:
         return False
-    if url.endswith("pdf"):
+    elif url.endswith("pdf"):
+        return False
+    elif ("twitter.com" or "x.com") in url:
         return False
     return True
 
