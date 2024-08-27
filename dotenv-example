@@ -1,3 +1,4 @@
+# populate these env vars
 OPENAI_API_KEY=
 SENDGRID_API_KEY=
 FROM_EMAIL=
