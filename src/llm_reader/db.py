@@ -1,7 +1,7 @@
 import os
 import sqlite3
 import sys
-from datetime import datetime
+from datetime import datetime, timedelta
 from typing import List
 
 from llm_reader.page import Page
@@ -41,6 +41,31 @@ def add_page(p: Page) -> None:
             row = (None, p.title, p.url, p.summary, "vitojph", categories, now)
             cur.execute(insert_query, row)
             con.commit()
+    except sqlite3.Error as err:
+        print(f"Error: {err}")
+    finally:
+        if con:
+            con.close()
+
+
+def fetch_pages() -> List:
+    if not os.path.isfile(dbname):
+        print(
+            f"Cannot find {dbname} database. Run `make all` to create it and populate it with data."
+        )
+        sys.exit()
+
+    try:
+        con = sqlite3.connect(dbname)
+        cur = con.cursor()
+
+        one_day_ago = datetime.now() - timedelta(days=1)
+        query = (
+            "SELECT title, url, summary, categories FROM pages WHERE created_at >= ?;"
+        )
+        cur.execute(query, (one_day_ago,))
+        results = cur.fetchall()
+        return results
     except sqlite3.Error as err:
         print(f"Error: {err}")
     finally:

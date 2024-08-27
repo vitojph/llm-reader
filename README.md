@@ -1,6 +1,12 @@
 # README
 
-(WIP) This contains an LLM-based reader that finds and summarizes interesting readings.
+This contains an LLM-based reader that finds and summarizes interesting readings.
+
+## Install
+
+```shell
+uv install
+```
 
 ## Commands
 
@@ -16,8 +22,14 @@ make db
 make analyze
 ```
 
-###  Clean database and and find intereting readings
+###  Clean database and and find interesting readings
 
 ```shell
 make all
+```
+
+###  Send emails with the latest interesting readings
+
+```shell
+make send
 ```

@@ -1,4 +1,4 @@
-.PHONY: clean db analyze
+.PHONY: clean db analyze send
 
 clean:
 	rm -f llm-reader.db
@@ -11,3 +11,5 @@ analyze:
 
 all: clean db analyze
 
+send:
+	uv run src/send-emails.py
